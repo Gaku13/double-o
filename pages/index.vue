@@ -4,6 +4,7 @@
       section.home__main
         .typo
           | Yappy
+        | YAPPY
         .content( v-parallax="0.15" )
           .desc
             h1 Nice

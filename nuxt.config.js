@@ -63,7 +63,7 @@ module.exports = {
   },
   loading: false,
   css: [
-    'modern-normalize/modern-normalize.css',
+    // 'modern-normalize/modern-normalize.css',
     '~/assets/css/style.styl'
   ],
   plugins: [
