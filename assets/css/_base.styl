@@ -1,0 +1,83 @@
+html
+  font-family system-ui, 'SF Display', Hiragino Sans, 'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo
+  font-size 16px
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+
+*, :after, :before
+  box-sizing border-box
+
+body
+  background-color $bg
+
+a
+  color $text
+  text-decoration none
+
+.container
+  position relative
+  max-width 1150px
+  margin-left auto
+  margin-right auto
+  @media  (max-width: 1500px)
+    max-width 845px
+  @media  (max-width: 1050px)
+    max-width 650px
+  @media  (max-width: 750px)
+    width 100%
+    padding 0 32px
+
+.container--full
+  position relative
+  width 100%
+
+// type
+.typo
+  font-size 70px
+  font-weight 900
+  letter-spacing .1rem
+  span
+    color $primary
+  @media  (max-width: 1500px)
+    font-size 50px
+  @media  (max-width: 1050px)
+    font-size 40px
+  @media  (max-width: 750px)
+    font-size 32px
+
+// link
+.link
+  display flex
+  position relative
+  align-items center
+  font-size 20px
+  text-decoration none
+  /*
+  background-image url('/images/icon/arrow_right.svg')
+  background-position 0 center
+  background-size 28px
+  background-repeat no-repeat
+  transition background-position .25s
+  transition-timing-function cubic-bezier(.18,.42,.6,.84)
+  */
+  span
+    display block
+    color $primary
+    padding-left 50px
+    font-weight 700
+    transform translate3d(0, 0, 0)
+    transition transform .25s
+    transition-timing-function cubic-bezier(.18,.42,.6,.84)
+  @media  (max-width: 1050px)
+    font-size 16px
+    background-size 24px
+    span
+      padding-left 40px
+
+.page-enter-active, .page-leave-active
+  transition opacity .4s ease-out
+
+.page-enter, .page-leave-active
+  opacity 0
