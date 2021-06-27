@@ -10,9 +10,9 @@
           X
         ul
           li
-            nuxt-link( v-scroll-to="service" to="/#service" ) Service
+            nuxt-link( v-scroll-to="service" to ) Service
           li
-            nuxt-link( v-scroll-to="about" to="/#about" ) About
+            nuxt-link( v-scroll-to="about" to ) About
           li
             nuxt-link( v-scroll-to="contact" to ) Contact
 </template>
@@ -26,7 +26,7 @@ export default {
     Logo,
     X,
   },
-  data: function() {
+  data() {
     return {
       service: {
         el: '#service',
