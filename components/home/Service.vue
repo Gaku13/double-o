@@ -1,8 +1,23 @@
 <template lang="pug">
-  section#service.home__service
-    .main-typo.typo
-      | hey
-    .services
+  section#service
+    .container
+      h1.typo
+        | Service
+        span
+          | 取扱サービス
+      .content
+        h3 投資助言業務
+        p
+          | 投資助言業（法2条8項11号）とは、相手方に対して、
+          | 「有価証券の価値等」「金融商品の価値等の分析に基づく投資判断」に関し、「口頭、文書、その他の方法」によって助言を行い、
+          | その対価として報酬を頂くことを内容としています。
+          br
+          | 特定の金融商品の提供元（証券会社など）に依存せず、あらゆる商品からお客様に適した商品を選定しアドバイスいたします。
+          br
+          | そのため、お客様にふさわしい商品の提案およびポートフォリオ構築を助言させていただきます。
+          br
+          | お客様のパートナーとして、次世代に渡って中長期での資産運用を支援させて頂くことを目指しております。
+    //- .services
       .order-num.typo
         .order-num-inner
           .order1.active 01.
@@ -33,6 +48,7 @@
 
 
 <style lang="stylus" scoped>
+/*
 .order-num
   position sticky
   top 200px
@@ -65,6 +81,7 @@
   &.step-ex
     .order-num-inner
       transform translate3d(0, -320px, 0)
+*/
 </style>
 
 <script>

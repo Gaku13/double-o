@@ -70,9 +70,11 @@ ol
 </style>
 
 <script>
-import Link from '~/components/common/Link.vue';
+// import Link from '~/components/common/Link.vue';
 
 export default {
-  components: { Link }
+  components: { 
+    // Link
+  }
 };
 </script>

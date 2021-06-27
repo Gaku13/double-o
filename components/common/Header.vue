@@ -1,6 +1,6 @@
 <template lang="pug">
   header
-    nuxt-link.logo_type( to="/" )
+    nuxt-link.logo( to="/" )
       Logo
     nav
       a.nav-button( href="#" @click="click" )
@@ -72,9 +72,15 @@ export default {
 <style lang="stylus">
   header
     position fixed
-    top 50px
-    left 50px
-    right 50px
+    top 0
+    left 0
+    right 0
+    display flex
+    align-items center
+    justify-content space-between
+    height 80px
+    padding 0 40px
+    background $white
     transition transform .75s .25s ease, opacity .75s .25s ease, visibility .75s .25s
     transform translateY(10px)
     visibility hidden
@@ -84,21 +90,14 @@ export default {
       transform translateY(0)
       opacity 1
       visibility visible
-    @media (max-width: 750px)
-      top 25px
-      left 25px
-      right 25px
 
-  .logo_type
-    img
-      width 80px
+  .logo
+    svg
+      width 240px
       height auto
       @media (max-width: 750px)
-        width 70px
+        width 160px
   nav
-    position absolute
-    top 0
-    right 0
     .nav-button
       display none
       visibility hidden
@@ -132,9 +131,6 @@ export default {
       right 30px
       @media (max-width: 750px)
         display block
-      img
-        width 32px
-        height 32px
     ul
       display flex
       align-items center
@@ -144,25 +140,10 @@ export default {
       padding 0
       li
         padding 0 20px
-        &.col-lang
-          border-left 1px solid $text
-          padding-left 40px
-          margin-left 20px
-          @media (max-width: 750px)
-            position relative
-            border 0
-            padding 40px 20px 0
-            margin 50px 0 0
-            &::before
-              content ''
-              position absolute
-              top -4px
-              border-top 1px solid $text
-              width 200px
         a
           color $text
           font-size 18px
-          font-weight 700;
+          letter-spacing .025rem
           text-decoration none
           transition color .3s
           @media (max-width: 1050px)
