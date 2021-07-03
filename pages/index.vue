@@ -143,11 +143,8 @@ export default {
     height 33.3333%
     color $white
     background-color $black
-    border 0
     border-bottom 1px solid $whiteTransparent2
-    outline 0
     overflow hidden
-    cursor pointer
     &:before
       content ''
       position absolute

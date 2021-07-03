@@ -11,11 +11,11 @@
           | 投資助言業（法2条8項11号）とは、相手方に対して、
           | 「有価証券の価値等」「金融商品の価値等の分析に基づく投資判断」に関し、「口頭、文書、その他の方法」によって助言を行い、
           | その対価として報酬を頂くことを内容としています。
-          br
+        p
           | 特定の金融商品の提供元（証券会社など）に依存せず、あらゆる商品からお客様に適した商品を選定しアドバイスいたします。
-          br
+        p
           | そのため、お客様にふさわしい商品の提案およびポートフォリオ構築を助言させていただきます。
-          br
+        p
           | お客様のパートナーとして、次世代に渡って中長期での資産運用を支援させて頂くことを目指しております。
     //- .services
       .order-num.typo
@@ -48,6 +48,30 @@
 
 
 <style lang="stylus" scoped>
+section#service
+  margin-top -200px
+  padding 400px 0 200px
+  color $textContrast
+  background-image url('/images/misc/bg-service.jpg')
+  background-size cover
+  h1
+    font-size 44px
+    font-weight 300
+    span
+      display block
+      margin-top 20px
+      color $textContrast
+      font-size 20px
+      font-weight normal
+
+.content
+  width 80%
+  padding 40px 0
+  border-top 1px solid $primary
+  h3
+    font-size 18px
+  p
+    line-height 32px
 /*
 .order-num
   position sticky

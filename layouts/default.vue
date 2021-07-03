@@ -31,6 +31,7 @@
   .bg-icon
     width 440px
     height 440px
+    opacity .5
   svg
     width 100%
     height auto
