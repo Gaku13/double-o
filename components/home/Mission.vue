@@ -4,7 +4,7 @@
       h1
         .typo Mission
         span
-          | Double O Capital ltd.が考える使命は、「本当の豊かさ」を追求することです。
+          | Double O Capital Ltd.が考える使命は、「本当の豊かさ」を追求することです。
       .content( v-parallax="0.1" )
         .text
           p

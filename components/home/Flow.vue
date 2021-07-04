@@ -126,6 +126,8 @@ ol.flow-container
       a
         color $textContrast
         text-decoration underline
+        &:hover
+          color $primary
     &:nth-child(2)
       margin-top 50px
       &::before
