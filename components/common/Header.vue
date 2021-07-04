@@ -147,13 +147,15 @@ export default {
       li
         padding 0 20px
         a
-          color $textContrast
+          color $text
           font-size 18px
           letter-spacing .025rem
           text-decoration none
           transition color .3s
           @media (max-width: 1024px)
             font-size 16px
+          @media (max-width: 767px)
+            color $textContrast
           &:hover
             color $primary
             @media (max-width: 767px)
