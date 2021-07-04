@@ -82,40 +82,43 @@ export default {
     padding 0 40px
     background $white
     transition transform .75s .25s ease, opacity .75s .25s ease, visibility .75s .25s
-    transform translateY(10px)
-    visibility hidden
-    opacity 0
+    // transform translateY(10px)
+    // visibility hidden
+    // opacity 0
     z-index $zindex-header
-    .page.is-loaded &
+    /*.page.is-loaded &
       transform translateY(0)
       opacity 1
-      visibility visible
-
+      visibility visible*/
+    @media (max-width: 639px)
+      height 50px
+      padding 0 20px
   .logo
     svg
       width 240px
       height auto
-      @media (max-width: 750px)
-        width 160px
+      @media (max-width: 767px)
+        width 200px
   nav
     .nav-button
       display none
+      line-height 18px
       visibility hidden
       font-weight 700
       letter-spacing .1rem
-      @media (max-width: 750px)
+      @media (max-width: 767px)
         display block
         visibility visible
     .nav-container
       position relative
       visibility visible
-      @media (max-width: 750px)
+      @media (max-width: 767px)
         position fixed
-        top -25px
-        right -25px
+        top 0
+        right 0
         width 100vw
         height 100vh
-        background-color $primary
+        background-color $black
         transition transform .2s ease, visibility .2s ease
         transform translateX(100%)
         overflow-x hidden
@@ -127,10 +130,13 @@ export default {
     .nav-close
       display none
       position absolute
-      top 30px
-      right 30px
-      @media (max-width: 750px)
+      top 20px
+      right 20px
+      @media (max-width: 767px)
         display block
+      svg
+        width 32px
+        height 32px
     ul
       display flex
       align-items center
@@ -141,18 +147,18 @@ export default {
       li
         padding 0 20px
         a
-          color $text
+          color $textContrast
           font-size 18px
           letter-spacing .025rem
           text-decoration none
           transition color .3s
-          @media (max-width: 1050px)
+          @media (max-width: 1024px)
             font-size 16px
           &:hover
             color $primary
-            @media (max-width: 750px)
+            @media (max-width: 767px)
               color $white
-      @media (max-width: 750px)
+      @media (max-width: 767px)
         display block
         padding 80px 30px
         li

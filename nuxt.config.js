@@ -61,7 +61,12 @@ module.exports = {
       { rel: "shortcut icon", href: "/favicon.ico" }
     ]
   },
-  loading: false,
+  //loading: false,
+  loading: {
+    color: '#E60012',
+    height: '2px',
+    throttle: 0
+  },
   css: [
     // 'modern-normalize/modern-normalize.css',
     '~/assets/css/style.styl'
@@ -70,7 +75,8 @@ module.exports = {
     {
       src: '~/plugins/vue-parallax-js',
       ssr: false
-    }, '~/plugins/scroll', '~/plugins/vue-scrollto', '~/plugins/i18n.js'
+    }, '~/plugins/scroll', '~/plugins/vue-scrollto', '~/plugins/i18n.js',
+    { src: '~/plugins/swiper.js', ssr: false }
   ],
   modules: [
     '@nuxtjs/svg',

@@ -31,12 +31,17 @@
 <style lang="stylus" scoped>
 #value
   display flex
-
+  flex-wrap wrap
+  @media (max-width: 767px)
+    flex-direction column-reverse
 .text-box,
 .title-box
   position relative
   width 50vw
   flex 0 1 50vw
+  @media (max-width: 767px)
+    width 100vw
+    flex 0 1 auto
   .content
     position absolute
     top 0
@@ -48,15 +53,20 @@
     justify-content center
 
 .text-box
+  padding 40px
   background-color $black
   p
     line-height 32px
     max-width 480px
     color $textContrast
+    @media (max-width: 639px)
+      line-height 26px
+      font-size 14px
 
 .title-box
   color $textContrast
   background-image url('/images/misc/bg-value.jpg')
+  background-position center center
   background-size cover
   .content
     padding 80px
@@ -67,6 +77,10 @@
       .jp
         margin-bottom 60px
         font-size 32px
+        @media (max-width: 1279px)
+          font-size 26px
+        @media (max-width: 1023px)
+          font-size 20px
         span
           display block
           font-size 16px
@@ -74,10 +88,15 @@
       .en
         font-size 112px
         font-weight 300
-
+        @media (max-width: 1279px)
+          font-size 82px
+        @media (max-width: 1023px)
+          font-size 60px
 .sizer
   position relative
   padding-top 90%
+  @media (max-width: 1279px)
+    padding-top 100%
 </style>
 
 <script>

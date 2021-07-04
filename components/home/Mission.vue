@@ -31,7 +31,8 @@
 <style lang="stylus" scoped>
 section#mission
   padding 180px 0
-
+  @media (max-width: 767px)
+    padding 120px 0
 h1
   margin 0 0 150px
   .typo
@@ -39,16 +40,30 @@ h1
     color $primary
     font-size 64px
     font-weight 300
+    @media (max-width: 1279px)
+      font-size 58px
+    @media (max-width: 639px)
+      font-size 40px
   span
     font-size 20px
     font-weight normal
-
+    @media (max-width: 1279px)
+      font-size 18px
+    @media (max-width: 639px)
+      font-size 16px
 .content
   display flex
   justify-content flex-end
+  @media (max-width: 1023px)
+    justify-content center
   .text
     width 65%
     line-height 32px
     padding-top 40px
     border-top 1px solid $black
+    @media (max-width: 1023px)
+      width 100%
+    @media (max-width: 639px)
+      line-height 26px
+      font-size 14px
 </style>

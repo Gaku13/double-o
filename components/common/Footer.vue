@@ -26,21 +26,32 @@ footer
   z-index 1
 .footer-container
   display flex
+  height 38vw
+  @media (max-width: 1023px)
+    height 50vw
+  @media (max-width: 767px)
+    height auto
   .logo
     display flex
     align-items center
     justify-content center
     position relative
     width 42vw
-    height 38vw
     background-color $primary
+    @media (max-width: 767px)
+      display none
   .nav
     width 58vw
     background-color $black
+    @media (max-width: 767px)
+      width 100vw
+      padding 50px 0
     ul
       list-style none
       margin 0
       padding 50px
+      @media (max-width: 767px)
+        margin-bottom 50px
     li
       margin-bottom 15px
     a

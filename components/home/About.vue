@@ -41,7 +41,7 @@
       .image-box
         .image
       .contact-box
-        a( href="https://" target="_blank" rel="noopener noreferrer nofollow" )
+        a( href="https://forms.gle/kKj8qcvpc3HmzLVn7" target="_blank" rel="noopener noreferrer nofollow" )
           .arrow
             IconArrow
           .content
@@ -59,6 +59,12 @@
 <style lang="stylus" scoped>
 .about-container
   display flex
+  height 42vw
+  @media (max-width: 1279px)
+    height 62vw
+  @media (max-width: 1023px)
+    flex-wrap wrap
+    height auto
 .data-box
   display flex
   align-items center
@@ -66,6 +72,8 @@
   width 42vw
   padding 40px
   background-color $black
+  @media (max-width: 1023px)
+    width 100%
   .inner
     line-height 26px
     color $textContrast
@@ -89,13 +97,28 @@
         &:first-child
           width 60px
           flex 0 0 auto
+        @media (max-width: 767px)
+          line-height 20px
+          font-size 12px
 .image-box
   width 36vw
-  height 42vw
   background-image url('/images/misc/gov.jpg')
   background-size cover
+  background-position center center
+  @media (max-width: 1023px)
+    width 50vw
+    height 60vw
+  @media (max-width: 767px)
+    width 100vw
+    height 80vw
+    background-position top center
 .contact-box
   width 22vw
+  @media (max-width: 1023px)
+    width 50vw
+  @media (max-width: 767px)
+    width 100vw
+    height 50vw
   a
     position relative
     display flex
@@ -110,7 +133,7 @@
       position absolute
       width 100px
       height 100px
-      background-color #FFAAAA
+      background-color $secondary
       border-radius 50%
       transition transform .25s ease-in-out
       transform scale(0)
@@ -126,6 +149,11 @@
       height 60px
       background-color $black
       z-index 1
+      @media (max-width: 767px)
+        top 20px
+        right 20px
+        width 44px
+        height 44px
       svg
         transition transform .25s ease-in-out
     .content

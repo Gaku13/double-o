@@ -1,5 +1,6 @@
 <template lang="pug">
-  .page( :class="{ 'is-loaded': dataLoadFinish }" )
+  //- .page( :class="{ 'is-loaded': dataLoadFinish }" )
+  .page
     Header
     .nuxt-container
       Loading
@@ -62,7 +63,7 @@ export default {
     return {
       dataLoadFinish: false
     };
-  },
+  },/*
   mounted: function() {
     var page;
     page = document.querySelector('.page');
@@ -74,6 +75,12 @@ export default {
         _this.dataLoadFinish = true;
       }, 1500);
     });
-  }
+  }*/
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }  
 }
  </script>

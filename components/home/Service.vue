@@ -53,7 +53,10 @@ section#service
   padding 400px 0 200px
   color $textContrast
   background-image url('/images/misc/bg-service.jpg')
+  background-position center center
   background-size cover
+  @media (max-width: 639px)
+    padding 300px 0 120px
   h1
     font-size 44px
     font-weight 300
@@ -68,10 +71,16 @@ section#service
   width 80%
   padding 40px 0
   border-top 1px solid $primary
+  @media (max-width: 1279px)
+    width 100%
   h3
     font-size 18px
   p
     line-height 32px
+    @media (max-width: 639px)
+      line-height 26px
+      font-size 14px
+
 /*
 .order-num
   position sticky

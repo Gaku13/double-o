@@ -56,13 +56,18 @@
 <style lang="stylus" scoped>
 section#flow
   padding 200px 0
-
+  @media (max-width: 639px)
+    padding 100px 0
 h1
   margin-bottom 160px
   color $primary
   font-size 80px
   font-weight 300
   text-align center
+  @media (max-width: 1023px)
+    font-size 60px
+  @media (max-width: 639px)
+    font-size 40px
   span
     display block
     margin 35px auto 0
@@ -75,6 +80,9 @@ ol.flow-container
   flex-wrap wrap
   list-style none
   margin 0 -4.16665vw
+  padding 0
+  @media (max-width: 767px)
+    margin 0
   li.flow-card
     position relative
     flex 0 1 50%
@@ -83,6 +91,11 @@ ol.flow-container
     margin-bottom 200px
     color $textContrast
     counter-increment inst
+    @media (max-width: 1023px)
+      flex 0 1 auto
+      width 100%
+    @media (max-width: 767px)
+      padding 0
     &::before
       position relative
       display block
@@ -90,6 +103,11 @@ ol.flow-container
       padding-top 100%
       background-image url('/images/misc/bg-flow1.jpg')
       background-size cover
+      background-position center center
+      @media (max-width: 1023px)
+        padding-top 80%
+      @media (max-width: 767px)
+        padding-top 150%
     &::after
       position absolute
       top -100px
@@ -99,6 +117,12 @@ ol.flow-container
       font-size 160px
       font-weight 300
       z-index 2
+      @media (max-width: 1279px)
+        font-size 140px
+      @media (max-width: 767px)
+        font-size 100px
+        top -50px
+        left 20px
     .content
       display flex
       align-items center
@@ -109,6 +133,10 @@ ol.flow-container
       bottom 0
       padding 60px
       z-index 1
+      @media (max-width: 767px)
+        left 20px
+        right 20px
+        padding 0
       button
         position absolute
         top 30px
@@ -118,6 +146,11 @@ ol.flow-container
         background $primary
         border 0
         outline 0
+        @media (max-width: 767px)
+          top 20px
+          right 0
+          width 44px
+          height 44px
         svg
           transition transform .25s ease-in-out
         &:hover
@@ -126,6 +159,7 @@ ol.flow-container
       a
         color $textContrast
         text-decoration underline
+        transition color .2s
         &:hover
           color $primary
     &:nth-child(2)
@@ -145,9 +179,16 @@ ol.flow-container
   margin-bottom 30px
   font-size 20px
   font-weight 600
+  @media (max-width: 1279px)
+    font-size 18px
+  @media (max-width: 639px)
+    font-size 16px
 
 .text
   line-height 32px
+  @media (max-width: 1279px)
+    line-height 26px
+    font-size 14px
 
 </style>
 
