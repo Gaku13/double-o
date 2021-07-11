@@ -1,30 +1,34 @@
 <template lang="pug">
-  header
-    nuxt-link.logo( to="/" )
-      Logo
-    nav
-      a.nav-button( href="#" @click="click" )
-        | menu
-      .nav-container
-        a.nav-close( href="#" @click="close" )
-          X
-        ul
-          li
-            nuxt-link( v-scroll-to="service" to ) Service
-          li
-            nuxt-link( v-scroll-to="about" to ) About
-          li
-            nuxt-link( v-scroll-to="contact" to ) Contact
+  headroom
+    header
+      nuxt-link.logo( to="/" )
+        Logo
+      nav
+        a.nav-button( href="#" @click="click" )
+          | menu
+        .nav-container
+          a.nav-close( href="#" @click="close" )
+            X
+          ul
+            li
+              nuxt-link( v-scroll-to="service" to ) Service
+            li
+              nuxt-link( v-scroll-to="about" to ) About
+            li
+              nuxt-link( v-scroll-to="contact" to ) Contact
 </template>
 
 <script>
 import Logo from '~/static/images/logo.svg?inline'
 import X from '~/static/images/icon/x.svg?inline'
 
+import { headroom } from 'vue-headroom'
+
 export default {
   components: {
     Logo,
     X,
+    headroom,
   },
   data() {
     return {
@@ -71,10 +75,7 @@ export default {
 
 <style lang="stylus">
   header
-    position fixed
-    top 0
-    left 0
-    right 0
+    position relative
     display flex
     align-items center
     justify-content space-between
@@ -97,6 +98,7 @@ export default {
     svg
       width 240px
       height auto
+      vertical-align bottom
       @media (max-width: 767px)
         width 200px
   nav

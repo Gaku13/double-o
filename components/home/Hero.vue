@@ -1,13 +1,17 @@
 <template lang="pug">
   section#hero
     .bg-container
-      .bg.bg1
+      .hero-video
+        video( poster="./images/misc/bg-slide1.jpg" playsinline autoplay loop muted )
+          source( type="video/mp4" src="~static/video/bg.mp4" )
+
+      //- .bg.bg1
         .typo
           h1
             | 持続可能な資産運用を
             br
             | 誠実にサポート
-      //- agile( :options="swiperOption" )
+      agile( :options="options" ref="carousel" @after-change="e => currentSlide = e.currentSlide" )
         .bg.bg1
           .typo
             h1
@@ -15,17 +19,20 @@
               br
               | 誠実にサポート
         .bg.bg2
-          .typo
-            .tagline
-              | 一生涯マンツーマン型
+          .inner( :class="{ 'active': this.currentSlide === 1 }" )
+            .typo
+              .tagline
+                | 一生涯マンツーマン型
         .bg.bg3
-          .typo
-            .tagline
-              | 最新のマネートレンド
+          .inner( :class="{ 'active': this.currentSlide === 2 }" )
+            .typo
+              .tagline
+                | 最新のマネートレンド
         .bg.bg4
-          .typo
-            .tagline
-              | 継続的な価値ある提案
+          .inner( :class="{ 'active': this.currentSlide === 3 }" )
+            .typo
+              .tagline
+                | 継続的な価値ある提案
       .button
         nuxt-link( v-scroll-to="'#contact'" to )
           .icon
@@ -34,19 +41,19 @@
             | お問い合わせ
 
     .card-list
-      .card( @mouseover="" )
+      .card( @mouseover="$refs.carousel.goTo(1)" :class="{ 'active': this.currentSlide === 1 }" )
         .content
           img( src="/images/icon/umbrella.svg" )
           .text
             | 安心
             span with strong security
-      .card( @mouseover="" )
+      .card( @mouseover="$refs.carousel.goTo(2)" :class="{ 'active': this.currentSlide === 2 }")
         .content
           img( src="/images/icon/timer.svg" )
           .text
             | 最新
             span resourceful information
-      .card( @mouseover="" )
+      .card( @mouseover="$refs.carousel.goTo(3)" :class="{ 'active': this.currentSlide === 3 }")
         .content
           img( src="/images/icon/roadmap.svg" )
           .text
@@ -69,56 +76,94 @@ export default {
   },
   data () {
     return {
-      swiperOption: {
+      currentSlide: 0,
+      options: {
         fade: true,
-        autoplay: true,
-        navButtons: false
+        // autoplay: true,
+        // autoplaySpeed: 7500,
+        navButtons: false,
+        // pauseOnHover: false,
+        dots: false
       }
     }
   },
-  methods: {
-  }
 }
 </script>
 
 <style lang="stylus" scoped>
 #hero
   display flex
-  min-height calc(100vh - 80px)
+  // min-height calc(100vh - 80px)
   @media (max-width: 767px)
     flex-wrap wrap
+
 .bg-container
   position relative
   width 66.6666vw
   @media (max-width: 767px)
     width 100%
     height calc(75vh - 80px)
+  @media (max-width: 639px)
+    height calc(80vh - 50px)
+  .hero-video
+    video
+      position absolute
+      top 0
+      left 0
+      width 100%
+      max-width 100%
+      height 100%
+      object-fit cover
+      z-index -1
+    &::after
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background rgba(35, 24, 21, .8)
+      z-index 0
   .bg
-    position absolute
-    top 0
-    left 0
-    right 0
-    bottom 0
+    position relative
+    width 100%
+    min-height calc(100vh - 80px)
     padding 40px
-    background-image url('/images/misc/bg-slice1.jpg')
-    background-size cover
-    background-position center center
+    z-index 1
+    // background-image url('/images/misc/bg-slide1.jpg')
+    // background-size cover
+    // background-position center
     @media (max-width: 639px)
       padding 20px
+    /*
     &.bg2
-      background-image url('/images/misc/bg-slice2.jpg')
+      background-image url('/images/misc/bg-slide2.jpg')
     &.bg3
-      background-image url('/images/misc/bg-slice3.jpg')
+      background-image url('/images/misc/bg-slide3.jpg')
     &.bg4
-      background-image url('/images/misc/bg-slice4.jpg')
+      background-image url('/images/misc/bg-slide4.jpg')
+    */
     &.bg2, &.bg3, &.bg4
       display flex
       align-items center
       justify-content center
       padding-bottom 100px
       .typo
+        position relative
         padding-bottom 30px
-        border-bottom 1px solid $primary
+        overflow hidden
+        &::before
+          content ''
+          position absolute
+          left 0
+          bottom 0
+          width 100%
+          border-bottom 1px solid $primary
+          transform translateX(-100%)
+          transition transform .75s ease-in-out .2s
+    .inner.active
+      .typo::before
+        transform translateX(0)
   .typo
     h1
       display inline-block
@@ -138,6 +183,12 @@ export default {
     font-size 32px
     font-weight normal
     text-align center
+    @media (max-width: 1279px)
+      font-size 26px
+    @media (max-width: 1023px)
+      font-size 22px
+    @media (max-width: 639px)
+      font-size 20px
   .button
     position absolute
     left 40px
@@ -186,7 +237,8 @@ export default {
     width 100%
     height 25vh
   @media (max-width: 639px)
-    height auto
+    // height auto
+    height 20vh
   .card
     position relative
     width 100%
@@ -198,9 +250,9 @@ export default {
     @media (max-width: 767px)
       width 33.333vw
       height 100%
-    @media (max-width: 639px)
+    /*@media (max-width: 639px)
       width 100vw
-      height auto
+      height auto*/
     &:before
       content ''
       position absolute
@@ -212,7 +264,8 @@ export default {
       transition transform .4s ease-in-out
       transform translateY(100%)
       z-index 0
-    &:hover
+    &:hover,
+    &.active
       &:before
         transform translateY(0)
     &:last-child
@@ -226,6 +279,8 @@ export default {
       justify-content space-between
       padding 40px
       @media (max-width: 639px)
+        flex-wrap wrap
+        justify-content center
         padding 20px
     img
       width 120px
@@ -249,6 +304,10 @@ export default {
         font-size 28px
       @media (max-width: 767px)
         font-size 20px
+      @media (max-width: 639px)
+        width 100%
+        font-size 16px
+        text-align center
       span
         display block
         color $textContrastMuted
@@ -257,4 +316,6 @@ export default {
           font-size 16px
         @media (max-width: 767px)
           font-size 14px
+        @media (max-width: 639px)
+          display none
 </style>

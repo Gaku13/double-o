@@ -75,12 +75,12 @@ module.exports = {
     {
       src: '~/plugins/vue-parallax-js',
       ssr: false
-    }, '~/plugins/scroll', '~/plugins/vue-scrollto', '~/plugins/i18n.js',
-    { src: '~/plugins/swiper.js', ssr: false }
+    }, '~/plugins/scroll', '~/plugins/vue-scrollto', '~/plugins/i18n'
   ],
   modules: [
     '@nuxtjs/svg',
     '@nuxtjs/style-resources',
+    'nuxt-agile',
     [
       '@nuxtjs/google-analytics', {
         id: ''

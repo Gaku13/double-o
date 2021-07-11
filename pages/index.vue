@@ -47,9 +47,11 @@ export default {
 
 <style lang="stylus" scoped>
 .home
+  /*
   padding-top 80px
   @media (max-width: 639px)
     padding-top 50px
+  */
   /*
   @media (max-width: 1500px)
     padding-top 200px
