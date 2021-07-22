@@ -1,9 +1,14 @@
 
 module.exports = {
   generate: {
+    dir: 'docs',
     fallback: true
   },
   mode: 'spa',
+  // ssr: false,
+  router: {
+    base: '/double-o/'
+  },
   head: {
     title: 'Double O Capital Ltd.',
     meta: [

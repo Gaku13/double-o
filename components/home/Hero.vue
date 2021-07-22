@@ -2,9 +2,8 @@
   section#hero
     .bg-container
       .hero-video
-        video( poster="./images/misc/bg-slide1.jpg" playsinline autoplay loop muted )
+        video( poster="/double-o/images/misc/bg-slide1.jpg" playsinline autoplay loop muted )
           source( type="video/mp4" src="~static/video/bg.mp4" )
-
       //- .bg.bg1
         .typo
           h1
@@ -43,19 +42,19 @@
     .card-list
       .card( @mouseover="$refs.carousel.goTo(1)" :class="{ 'active': this.currentSlide === 1 }" )
         .content
-          img( src="/images/icon/umbrella.svg" )
+          img( src="/double-o/images/icon/umbrella.svg" )
           .text
             | 安心
             span with strong security
       .card( @mouseover="$refs.carousel.goTo(2)" :class="{ 'active': this.currentSlide === 2 }")
         .content
-          img( src="/images/icon/timer.svg" )
+          img( src="/double-o/images/icon/timer.svg" )
           .text
             | 最新
             span resourceful information
       .card( @mouseover="$refs.carousel.goTo(3)" :class="{ 'active': this.currentSlide === 3 }")
         .content
-          img( src="/images/icon/roadmap.svg" )
+          img( src="/double-o/images/icon/roadmap.svg" )
           .text
             | 継続
             span continuous support
